@@ -17,12 +17,16 @@ export function Hero() {
           <span className="h-px w-14 bg-olive/60" />
         </div>
 
-        <h1
-          className="mt-6 font-script text-[5.5rem] leading-[1] text-kubera-red sm:text-[7rem] md:text-[9rem]"
-          style={{ transform: "rotate(-2deg)", paddingTop: "0.25em", paddingBottom: "0.15em" }}
-        >
-          Kubera
-        </h1>
+        <div className="mt-6 inline-flex items-end justify-center overflow-visible">
+          <h1
+            className="font-script text-[5.5rem] leading-[1] text-kubera-red sm:text-[7rem] md:text-[9rem]"
+            style={{ transform: "rotate(-2deg)", paddingTop: "0.25em", paddingBottom: "0.15em" }}
+          >
+            Kubera
+          </h1>
+          <KuberaFlourish className="-ml-2 mb-3 h-16 w-24 shrink-0 sm:h-20 sm:w-32 md:h-28 md:w-44" />
+        </div>
+
 
         <svg
           viewBox="0 0 380 40"
