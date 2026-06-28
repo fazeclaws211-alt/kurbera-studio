@@ -1,29 +1,49 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Nav } from "@/components/kubera/Nav";
+import { Hero } from "@/components/kubera/Hero";
+import { Marquee } from "@/components/kubera/Marquee";
+import { Collections, type FabricKey } from "@/components/kubera/Collections";
+import { SampleDesk } from "@/components/kubera/SampleDesk";
+import { Lookbook } from "@/components/kubera/Lookbook";
+import { Contact } from "@/components/kubera/Contact";
+import { Footer } from "@/components/kubera/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Kubera Studio India LLP — The House of Fashion & Fabric" },
+      {
+        name: "description",
+        content:
+          "A textile studio for expressive fabrics, custom prints, sample-led discovery, and collection-ready fabric stories.",
+      },
+      { property: "og:title", content: "Kubera Studio India LLP — The House of Fashion & Fabric" },
+      {
+        property: "og:description",
+        content:
+          "Expressive fabrics, custom prints, and sample-led discovery from a boutique Indian textile studio.",
+      },
     ],
   }),
-  component: Index,
+  component: KuberaHome,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function KuberaHome() {
+  const [focus, setFocus] = useState<FabricKey>("Cotton");
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-paper">
+      <Nav />
+      <main>
+        <Hero />
+        <Marquee />
+        <Collections selected={focus} onSelect={setFocus} />
+        <SampleDesk focus={focus} />
+        <Lookbook />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
