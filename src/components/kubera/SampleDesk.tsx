@@ -58,30 +58,30 @@ export function SampleDesk({ focus }: { focus: FabricKey }) {
   return (
     <section id="sample-desk" className="bg-moss text-cream-warm py-20 md:py-28">
       <div className="mx-auto w-full max-w-7xl px-5 md:px-8">
-        <Reveal className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
-          <div>
-            <span className="micro-label text-cream-warm/70">03 — Preview Desk</span>
-            <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
-              The Preview Desk is open.
-            </h2>
-            <p className="mt-5 max-w-md text-cream-warm/80 leading-relaxed">
-              Tell us how you'd like to see the line. We'll send the right
-              preview — a lookbook, a sketch, or an appointment at the studio.
-            </p>
+        <Reveal className="mx-auto mb-12 flex max-w-3xl flex-col items-center gap-4 text-center">
+          <span className="micro-label text-cream-warm/70">03 — Preview Desk</span>
+          <h2 className="font-display text-4xl font-medium md:text-5xl">
+            The Preview Desk is open.
+          </h2>
+          <p className="max-w-md text-cream-warm/80 leading-relaxed">
+            Tell us how you'd like to see the line. We'll send the right
+            preview — a lookbook, a sketch, or an appointment at the studio.
+          </p>
+        </Reveal>
 
-            <div className="mt-8 rounded-2xl border border-cream-warm/15 bg-moss-deep/50 p-5">
-              <p className="micro-label text-cream-warm/60">Currently focused on</p>
-              <div className="mt-2 flex items-center justify-between gap-4">
-                <div>
-                  <p className="font-display text-3xl">{focus}</p>
-                  <p className="text-sm text-cream-warm/75">
-                    {fabricDetails[focus].descriptor}
-                  </p>
-                </div>
-                <span className="micro-label rounded-full border border-cream-warm/25 px-3 py-1">
-                  {fabricDetails[focus].code}
-                </span>
+        <Reveal className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16 lg:items-start">
+          <div className="rounded-2xl border border-cream-warm/15 bg-moss-deep/50 p-5">
+            <p className="micro-label text-cream-warm/60">Currently focused on</p>
+            <div className="mt-2 flex items-center justify-between gap-4">
+              <div>
+                <p className="font-display text-3xl">{focus}</p>
+                <p className="text-sm text-cream-warm/75">
+                  {fabricDetails[focus].descriptor}
+                </p>
               </div>
+              <span className="micro-label rounded-full border border-cream-warm/25 px-3 py-1">
+                {fabricDetails[focus].code}
+              </span>
             </div>
           </div>
 

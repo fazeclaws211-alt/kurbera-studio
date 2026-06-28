@@ -75,13 +75,11 @@ export function Collections({
   return (
     <section id="collections" className="bg-paper py-20 md:py-28">
       <div className="mx-auto w-full max-w-7xl px-5 md:px-8">
-        <Reveal className="flex flex-col items-start gap-3 md:flex-row md:items-end md:justify-between">
-          <div>
-            <span className="micro-label text-moss">02 — Garment Lines</span>
-            <h2 className="mt-3 font-display text-4xl font-medium text-ink md:text-5xl">
-              Browse a garment line.
-            </h2>
-          </div>
+        <Reveal className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
+          <span className="micro-label text-moss">02 — Garment Lines</span>
+          <h2 className="font-display text-4xl font-medium text-ink md:text-5xl">
+            Browse a garment line.
+          </h2>
           <p className="max-w-md text-sm text-ink/70">
             Tap a card to load it into the Preview Desk. Each line is a current
             direction from the house — built as a coordinated set of looks.
