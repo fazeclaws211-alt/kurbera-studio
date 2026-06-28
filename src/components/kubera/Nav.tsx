@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useRouter, useRouterState } from "@tanstack/react-router";
 import { KuberaWordmark } from "./Wordmark";
 
-const links = [
-  { href: "#collections", label: "Garment Lines" },
-  { href: "#sample-desk", label: "Preview Desk" },
-  { href: "#lookbook", label: "Lookbook" },
-  { href: "#contact", label: "Contact" },
+type NavLink = { label: string } & ({ to: "/catalog" } | { hash: string });
+
+const links: NavLink[] = [
+  { to: "/catalog", label: "Catalog" },
+  { hash: "sample-desk", label: "Preview Desk" },
+  { hash: "lookbook", label: "Lookbook" },
+  { hash: "contact", label: "Contact" },
 ];
+
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
