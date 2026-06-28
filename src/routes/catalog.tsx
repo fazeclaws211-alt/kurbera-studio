@@ -297,7 +297,7 @@ function PreviewDrawer({ piece, onClose }: { piece: Piece; onClose: () => void }
       >
         <button
           onClick={onClose}
-          className="absolute right-3 top-3 z-10 rounded-full bg-cream-warm/95 p-2 text-ink/70 transition hover:text-kubera-red"
+          className="btn-feel absolute right-3 top-3 z-10 rounded-full bg-cream-warm/95 p-2 text-ink/70 transition hover:text-kubera-red"
           aria-label="Close"
         >
           <X size={16} />
@@ -329,7 +329,7 @@ function PreviewDrawer({ piece, onClose }: { piece: Piece; onClose: () => void }
               href={waLinkFor(piece)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
+              className="btn-feel mt-6 inline-flex items-center gap-2 rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
             >
               <MessageCircle size={16} />
               Enquire on WhatsApp
