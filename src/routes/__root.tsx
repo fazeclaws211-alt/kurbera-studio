@@ -92,6 +92,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Kubera Studio India LLP — The House of Fashion" },
+      { name: "description", content: "A premium website for Kubera Studio India LLP, showcasing fashion and fabric collections." },
+      { property: "og:description", content: "A premium website for Kubera Studio India LLP, showcasing fashion and fabric collections." },
+      { name: "twitter:description", content: "A premium website for Kubera Studio India LLP, showcasing fashion and fabric collections." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b4b1dce0-3aaf-460e-8d08-081ed189a232/id-preview-9a0303c2--f4e8e868-8e46-4c78-85fa-6a8edaeec3a2.lovable.app-1782612517671.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b4b1dce0-3aaf-460e-8d08-081ed189a232/id-preview-9a0303c2--f4e8e868-8e46-4c78-85fa-6a8edaeec3a2.lovable.app-1782612517671.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
