@@ -29,7 +29,7 @@ export function Contact() {
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-2 rounded-full bg-moss px-6 py-3 text-sm font-medium text-cream-warm transition hover:bg-moss-deep"
+            className="btn-feel mt-4 inline-flex items-center gap-2 rounded-full bg-moss px-6 py-3 text-sm font-medium text-cream-warm transition hover:bg-moss-deep"
           >
             <MessageCircle size={16} />
             Message us on WhatsApp

@@ -127,7 +127,7 @@ function CatalogPage() {
                     <button
                       key={l}
                       onClick={() => setLine(l)}
-                      className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition ${
+                      className={`btn-feel rounded-full px-3.5 py-1.5 text-xs font-medium transition ${
                         active
                           ? "bg-kubera-red text-cream-warm"
                           : "bg-cream-warm text-ink/75 border border-moss/15 hover:text-kubera-red"
@@ -157,7 +157,7 @@ function CatalogPage() {
                 <select
                   value={sort}
                   onChange={(e) => setSort(e.target.value as "line" | "name")}
-                  className="rounded-full border border-moss/20 bg-cream-warm px-3 py-1.5 text-xs text-ink/75 focus:border-kubera-red focus:outline-none"
+                  className="btn-feel rounded-full border border-moss/20 bg-cream-warm px-3 py-1.5 text-xs text-ink/75 focus:border-kubera-red focus:outline-none"
                 >
                   <option value="line">Sort: by line</option>
                   <option value="name">Sort: A–Z</option>
@@ -220,7 +220,7 @@ function CatalogPage() {
             <Link
               to="/"
               hash="sample-desk"
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-moss px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-moss-deep"
+              className="btn-feel mt-5 inline-flex items-center gap-2 rounded-full bg-moss px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-moss-deep"
             >
               Open the Preview Desk →
             </Link>
@@ -247,7 +247,7 @@ function PieceGrid({
         <Reveal key={p.id} delay={Math.min(i * 30, 240)}>
           <button
             onClick={() => onPreview(p)}
-            className="group block w-full overflow-hidden rounded-2xl border border-moss/15 bg-cream-warm text-left transition hover:border-kubera-red/50 hover:shadow-[0_20px_40px_-30px_rgba(63,90,58,0.4)]"
+            className="btn-feel group block w-full overflow-hidden rounded-2xl border border-moss/15 bg-cream-warm text-left transition hover:border-kubera-red/50 hover:shadow-[0_20px_40px_-30px_rgba(63,90,58,0.4)]"
           >
             <div className="relative overflow-hidden">
               <img
@@ -297,7 +297,7 @@ function PreviewDrawer({ piece, onClose }: { piece: Piece; onClose: () => void }
       >
         <button
           onClick={onClose}
-          className="absolute right-3 top-3 z-10 rounded-full bg-cream-warm/95 p-2 text-ink/70 transition hover:text-kubera-red"
+          className="btn-feel absolute right-3 top-3 z-10 rounded-full bg-cream-warm/95 p-2 text-ink/70 transition hover:text-kubera-red"
           aria-label="Close"
         >
           <X size={16} />
@@ -329,7 +329,7 @@ function PreviewDrawer({ piece, onClose }: { piece: Piece; onClose: () => void }
               href={waLinkFor(piece)}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
+              className="btn-feel mt-6 inline-flex items-center gap-2 rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
             >
               <MessageCircle size={16} />
               Enquire on WhatsApp

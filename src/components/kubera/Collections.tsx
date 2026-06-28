@@ -26,7 +26,7 @@ export function Collections() {
           </p>
           <Link
             to="/catalog"
-            className="mt-3 inline-flex items-center gap-2 rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
+            className="btn-feel mt-3 inline-flex items-center gap-2 rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
           >
             Open the catalog →
           </Link>
@@ -40,8 +40,8 @@ export function Collections() {
                 <Link
                   to="/catalog"
                   search={{ line: c.key }}
-                  className="cloth-card group relative block w-full overflow-hidden rounded-[22px] border border-moss/15 bg-cream-warm p-3 text-left transition hover:border-kubera-red/50"
-                >
+                  className="btn-feel cloth-card group relative block w-full overflow-hidden rounded-[22px] border border-moss/15 bg-cream-warm p-3 text-left transition hover:border-kubera-red/50"
+                  >
                   <div className="relative overflow-hidden rounded-2xl">
                     <img
                       src={c.image}

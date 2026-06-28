@@ -74,14 +74,14 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
             <button
               onClick={() => scrollTo("#collections")}
-              className="group inline-flex items-center gap-2 rounded-full bg-kubera-red px-6 py-3 text-sm font-medium text-cream-warm shadow-[0_8px_22px_-12px_rgba(226,56,45,0.6)] transition hover:bg-kubera-red-deep"
+              className="btn-feel group inline-flex items-center gap-2 rounded-full bg-kubera-red px-6 py-3 text-sm font-medium text-cream-warm shadow-[0_8px_22px_-12px_rgba(226,56,45,0.6)] transition hover:bg-kubera-red-deep"
             >
               View Garment Lines
               <ArrowUpRight size={16} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
             <button
               onClick={() => scrollTo("#sample-desk")}
-              className="inline-flex items-center gap-2 rounded-full border border-moss/40 bg-transparent px-6 py-3 text-sm font-medium text-moss transition hover:bg-moss hover:text-cream-warm"
+              className="btn-feel inline-flex items-center gap-2 rounded-full border border-moss/40 bg-transparent px-6 py-3 text-sm font-medium text-moss transition hover:bg-moss hover:text-cream-warm"
             >
               Request a Preview
             </button>
@@ -153,7 +153,7 @@ export function Hero() {
               <span className="micro-label text-ink/60">Kubera / FS-04</span>
               <button
                 onClick={() => scrollTo("#sample-desk")}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-kubera-red hover:text-kubera-red-deep"
+                className="btn-feel inline-flex items-center gap-1.5 text-sm font-medium text-kubera-red hover:text-kubera-red-deep"
               >
                 Request preview <ArrowUpRight size={14} />
               </button>

@@ -82,7 +82,7 @@ export function SampleDesk() {
                   <button
                     key={l}
                     onClick={() => setFocus(l)}
-                    className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
+                    className={`btn-feel rounded-full px-3 py-1.5 text-xs font-medium transition ${
                       active
                         ? "bg-kubera-red text-cream-warm"
                         : "bg-cream-warm/10 text-cream-warm/80 hover:bg-cream-warm/20"
@@ -113,7 +113,7 @@ export function SampleDesk() {
                   <button
                     key={m}
                     onClick={() => setMode(m)}
-                    className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                    className={`btn-feel rounded-full px-4 py-2 text-sm font-medium transition ${
                       active
                         ? "bg-kubera-red text-cream-warm"
                         : "bg-paper-deep text-ink/75 hover:bg-moss/10"
@@ -147,7 +147,7 @@ export function SampleDesk() {
                 href={waLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
+                className="btn-feel inline-flex items-center gap-2 rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
               >
                 <MessageCircle size={16} />
                 Request on WhatsApp

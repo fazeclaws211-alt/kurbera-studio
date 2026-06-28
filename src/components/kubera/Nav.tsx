@@ -90,7 +90,7 @@ export function Nav() {
               <span className="micro-label text-cream-warm/85">Browse the house</span>
               <Link
                 to="/catalog"
-                className="rounded-full bg-kubera-red px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-cream-warm transition hover:bg-kubera-red-deep"
+                className="btn-feel rounded-full bg-kubera-red px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-cream-warm transition hover:bg-kubera-red-deep"
               >
                 Open Catalog
               </Link>
@@ -99,7 +99,7 @@ export function Nav() {
 
 
           <button
-            className="ml-auto md:hidden rounded-full border border-moss/30 p-2 text-moss"
+            className="btn-feel ml-auto md:hidden rounded-full border border-moss/30 p-2 text-moss"
             onClick={() => setOpen((o) => !o)}
             aria-label="Toggle menu"
           >
@@ -117,7 +117,7 @@ export function Nav() {
             <Link
               to="/catalog"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-kubera-red px-4 py-2 text-cream-warm"
+              className="btn-feel mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-kubera-red px-4 py-2 text-cream-warm"
             >
               <span className="micro-label">Open Catalog</span>
             </Link>
