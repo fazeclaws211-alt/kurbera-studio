@@ -18,10 +18,10 @@ export function KuberaWordmark({
 }) {
   const s = sizes[size];
   return (
-    <div className={`inline-flex flex-col ${className}`}>
+    <div className={`inline-flex flex-col overflow-visible ${className}`}>
       <span
-        className={`font-script text-kubera-red ${s.script}`}
-        style={{ transform: "rotate(-1.5deg)", display: "inline-block" }}
+        className={`font-script text-kubera-red overflow-visible ${s.script}`}
+        style={{ transform: "rotate(-1.5deg)", display: "inline-block", transformOrigin: "left center" }}
       >
         Kubera
       </span>
@@ -30,7 +30,7 @@ export function KuberaWordmark({
       </span>
       {tagline && (
         <span className="mt-2 font-display italic text-olive text-sm">
-          The House of Fashion &amp; Fabric
+          The House of Fashion
         </span>
       )}
     </div>
