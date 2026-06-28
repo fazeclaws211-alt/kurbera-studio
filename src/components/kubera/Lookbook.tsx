@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
 import f1 from "@/assets/look-festive-1.jpg";
 import f2 from "@/assets/look-festive-2.jpg";
@@ -8,6 +9,7 @@ import b1 from "@/assets/look-boutique-1.jpg";
 import b2 from "@/assets/look-boutique-2.jpg";
 import c1 from "@/assets/look-custom-1.jpg";
 import p1 from "@/assets/fabric-prints.jpg";
+import c2 from "@/assets/fabric-custom.jpg";
 
 type Cat = "All" | "Dailywear" | "Festive" | "Boutique" | "Custom";
 
@@ -17,16 +19,16 @@ const items: Array<{
   title: string;
   base: string;
   image: string;
-  span: "tall" | "wide" | "regular";
 }> = [
-  { id: "LB/01", cat: "Festive", title: "Vermilion Gold", base: "Festive · Look 01", image: f1, span: "tall" },
-  { id: "LB/02", cat: "Dailywear", title: "Cream Field", base: "Dailywear · Look 02", image: d1, span: "regular" },
-  { id: "LB/03", cat: "Boutique", title: "Stack Six", base: "Resort · Look 03", image: b1, span: "regular" },
-  { id: "LB/04", cat: "Festive", title: "Rose Field", base: "Festive · Look 04", image: f2, span: "wide" },
-  { id: "LB/05", cat: "Dailywear", title: "Moss Glow", base: "Dailywear · Look 05", image: d2, span: "regular" },
-  { id: "LB/06", cat: "Custom", title: "Atelier 12", base: "Custom · hand-finished", image: c1, span: "regular" },
-  { id: "LB/07", cat: "Boutique", title: "Paper & Petal", base: "Resort · Look 07", image: b2, span: "tall" },
-  { id: "LB/08", cat: "Festive", title: "Rosewater", base: "Festive · Look 08", image: p1, span: "regular" },
+  { id: "LB/01", cat: "Festive", title: "Vermilion Gold", base: "Festive · Look 01", image: f1 },
+  { id: "LB/02", cat: "Dailywear", title: "Cream Field", base: "Dailywear · Look 02", image: d1 },
+  { id: "LB/03", cat: "Boutique", title: "Stack Six", base: "Resort · Look 03", image: b1 },
+  { id: "LB/04", cat: "Festive", title: "Rose Field", base: "Festive · Look 04", image: f2 },
+  { id: "LB/05", cat: "Dailywear", title: "Moss Glow", base: "Dailywear · Look 05", image: d2 },
+  { id: "LB/06", cat: "Custom", title: "Atelier 12", base: "Custom · hand-finished", image: c1 },
+  { id: "LB/07", cat: "Boutique", title: "Paper & Petal", base: "Resort · Look 07", image: b2 },
+  { id: "LB/08", cat: "Festive", title: "Rosewater", base: "Festive · Look 08", image: p1 },
+  { id: "LB/09", cat: "Custom", title: "House Suit", base: "Custom · Look 09", image: c2 },
 ];
 
 const filters: Cat[] = ["All", "Dailywear", "Festive", "Boutique", "Custom"];
@@ -35,7 +37,7 @@ export function Lookbook() {
   const [cat, setCat] = useState<Cat>("All");
 
   const visible = useMemo(
-    () => (cat === "All" ? items : items.filter((i) => i.cat === cat)),
+    () => (cat === "All" ? items.slice(0, 9) : items.filter((i) => i.cat === cat).slice(0, 9)),
     [cat],
   );
 
@@ -73,34 +75,26 @@ export function Lookbook() {
 
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((it, i) => (
-            <Reveal
-              key={it.id}
-              delay={i * 50}
-              className={
-                it.span === "tall"
-                  ? "lg:row-span-2"
-                  : it.span === "wide"
-                  ? "sm:col-span-2"
-                  : ""
-              }
-            >
-              <figure className="group relative h-full overflow-hidden rounded-[22px] bg-cream-warm border border-moss/15">
-                <div className="relative overflow-hidden">
+            <Reveal key={it.id} delay={i * 50}>
+              <Link
+                to="/catalog"
+                search={{ line: it.cat === "Boutique" ? "Resort" : it.cat === "Custom" ? "Signature" : it.cat }}
+                className="group block h-full overflow-hidden rounded-[22px] border border-moss/15 bg-cream-warm"
+              >
+                <div className="relative aspect-[4/5] overflow-hidden">
                   <img
                     src={it.image}
                     alt={`${it.title} — ${it.base}`}
-                    width={1024}
-                    height={1024}
+                    width={800}
+                    height={1000}
                     loading="lazy"
-                    className={`w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] ${
-                      it.span === "tall" ? "h-[560px]" : it.span === "wide" ? "h-[420px]" : "h-[320px]"
-                    }`}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
                   <span className="absolute left-3 top-3 rounded-full bg-cream-warm/95 px-3 py-1 micro-label text-ink">
                     {it.id} — {it.cat}
                   </span>
                 </div>
-                <figcaption className="flex items-center justify-between p-4">
+                <div className="flex items-center justify-between p-4">
                   <div>
                     <p className="font-display text-lg text-ink">{it.title}</p>
                     <p className="text-xs text-ink/60">{it.base}</p>
@@ -108,10 +102,19 @@ export function Lookbook() {
                   <span className="micro-label text-moss opacity-0 transition group-hover:opacity-100">
                     View →
                   </span>
-                </figcaption>
-              </figure>
+                </div>
+              </Link>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            to="/catalog"
+            className="inline-flex items-center gap-2 rounded-full bg-moss px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-moss-deep"
+          >
+            Browse all looks →
+          </Link>
         </div>
       </div>
     </section>
