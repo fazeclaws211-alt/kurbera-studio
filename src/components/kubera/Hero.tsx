@@ -1,5 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 import { KuberaFlourish } from "./Wordmark";
 
 
