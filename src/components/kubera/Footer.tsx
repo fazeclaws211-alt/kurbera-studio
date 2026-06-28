@@ -25,7 +25,6 @@ export function Footer() {
           <p className="micro-label text-cream-warm/55">Studio</p>
           <ul className="mt-3 space-y-2 text-sm text-cream-warm/85">
             <li>Kubera Studio India LLP</li>
-            <li>studio@kubera.in</li>
             <li>Instagram · @kubera.studio</li>
           </ul>
         </div>
