@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
 import { MessageCircle } from "lucide-react";
 import { Reveal } from "./Reveal";
-import type { FabricKey } from "./Collections";
-import { fabricDetails } from "./Collections";
+import { fabricDetails, type FabricKey } from "@/data/catalog";
+
 
 type Mode = "Lookbook preview" | "Custom design" | "Studio appointment";
 
