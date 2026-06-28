@@ -8,15 +8,15 @@ export function Footer() {
         <div>
           <KuberaWordmark size="footer" className="[&_span:first-child]:!text-cream-warm [&_span:nth-child(2)]:!text-cream-warm/70" />
           <p className="mt-4 max-w-sm text-sm text-cream-warm/75 leading-relaxed">
-            A boutique textile studio building considered fabric stories for
-            designers, ateliers, and small-edition houses.
+            A boutique fashion house presenting considered garment lines —
+            previewed by appointment, lookbook, or custom brief.
           </p>
         </div>
         <div>
           <p className="micro-label text-cream-warm/55">Visit</p>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a href="#collections" className="hover:text-blush transition">Collections</a></li>
-            <li><a href="#sample-desk" className="hover:text-blush transition">Sample Desk</a></li>
+            <li><a href="#collections" className="hover:text-blush transition">Garment Lines</a></li>
+            <li><a href="#sample-desk" className="hover:text-blush transition">Preview Desk</a></li>
             <li><a href="#lookbook" className="hover:text-blush transition">Lookbook</a></li>
             <li><a href="#contact" className="hover:text-blush transition">Contact</a></li>
           </ul>
@@ -34,7 +34,7 @@ export function Footer() {
       <div className="border-t border-cream-warm/15">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 text-xs text-cream-warm/60 md:px-8">
           <span>© {new Date().getFullYear()} Kubera Studio India LLP. All rights reserved.</span>
-          <span className="micro-label">The House of Fashion & Fabric</span>
+          <span className="micro-label">The House of Fashion</span>
         </div>
       </div>
     </footer>

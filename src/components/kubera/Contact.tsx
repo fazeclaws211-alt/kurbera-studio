@@ -9,18 +9,19 @@ const STUDIO_EMAIL = "studio@kubera.in";
 const schema = z.object({
   name: z.string().trim().min(1, "Add your name").max(80),
   brand: z.string().trim().max(120).optional().or(z.literal("")),
-  need: z.string().min(1, "Pick a fabric need"),
-  quantity: z.string().trim().max(60).optional().or(z.literal("")),
+  need: z.string().min(1, "Pick a line of interest"),
+  occasion: z.string().trim().max(60).optional().or(z.literal("")),
   message: z.string().trim().min(1, "Add a short brief").max(1200),
 });
 
 const needs = [
-  "Cotton",
-  "Linen",
-  "Prints",
-  "Embroidery",
-  "Blends",
-  "Custom build",
+  "Dailywear",
+  "Festive",
+  "Resort",
+  "Bridal",
+  "Occasion",
+  "Signature",
+  "Custom design",
   "Not sure yet",
 ];
 
@@ -29,7 +30,7 @@ export function Contact() {
     name: "",
     brand: "",
     need: "",
-    quantity: "",
+    occasion: "",
     message: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -41,9 +42,9 @@ export function Contact() {
       `Hi Kubera Studio,`,
       ``,
       `Name: ${form.name || "—"}`,
-      `Brand: ${form.brand || "—"}`,
-      `Fabric need: ${form.need || "—"}`,
-      `Approx. quantity: ${form.quantity || "—"}`,
+      `Brand / referred by: ${form.brand || "—"}`,
+      `Line of interest: ${form.need || "—"}`,
+      `Occasion or date: ${form.occasion || "—"}`,
       ``,
       `Brief:`,
       form.message || "—",
@@ -69,7 +70,7 @@ export function Contact() {
 
   const onSend = () => {
     if (!validate()) return;
-    const subject = encodeURIComponent(`Fabric enquiry — ${form.name}`);
+    const subject = encodeURIComponent(`Preview enquiry — ${form.name}`);
     const body = encodeURIComponent(waMessage);
     window.location.href = `mailto:${STUDIO_EMAIL}?subject=${subject}&body=${body}`;
     setSent(true);
@@ -100,12 +101,12 @@ export function Contact() {
           <div>
             <span className="micro-label text-moss">05 — Enquire</span>
             <h2 className="mt-3 font-display text-4xl font-medium text-ink md:text-5xl">
-              Send a clean fabric enquiry.
+              Send a clean preview enquiry.
             </h2>
             <p className="mt-5 max-w-md text-ink/75 leading-relaxed">
-              The clearer your brief, the closer the first sample. Tell us the
-              fabric, the use, the quantity, and the timeline — we'll come back
-              with the right base.
+              The clearer your brief, the better the first preview. Tell us the
+              line, the occasion, and the timeline — we'll come back with the
+              right lookbook or appointment.
             </p>
 
             <div className="mt-8 space-y-4 text-sm">
@@ -118,7 +119,7 @@ export function Contact() {
             <div className="mt-8 rounded-2xl border border-moss/20 bg-cream-warm p-5">
               <p className="micro-label text-moss">A quiet promise</p>
               <p className="mt-2 font-display italic text-lg text-ink">
-                "We won't send you a fabric we wouldn't run in our own collection."
+                "We won't show you a piece we wouldn't wear ourselves."
               </p>
             </div>
           </div>
@@ -133,7 +134,7 @@ export function Contact() {
                   placeholder="Your name"
                 />
               </Field>
-              <Field label="Brand / company" error={errors.brand}>
+              <Field label="Brand / referred by" error={errors.brand}>
                 <input
                   value={form.brand}
                   onChange={(e) => setForm((f) => ({ ...f, brand: e.target.value }))}
@@ -141,7 +142,7 @@ export function Contact() {
                   placeholder="Optional"
                 />
               </Field>
-              <Field label="Fabric need" error={errors.need}>
+              <Field label="Line of interest" error={errors.need}>
                 <select
                   value={form.need}
                   onChange={(e) => setForm((f) => ({ ...f, need: e.target.value }))}
@@ -155,12 +156,12 @@ export function Contact() {
                   ))}
                 </select>
               </Field>
-              <Field label="Approx. quantity" error={errors.quantity}>
+              <Field label="Occasion / date" error={errors.occasion}>
                 <input
-                  value={form.quantity}
-                  onChange={(e) => setForm((f) => ({ ...f, quantity: e.target.value }))}
+                  value={form.occasion}
+                  onChange={(e) => setForm((f) => ({ ...f, occasion: e.target.value }))}
                   className="input-base"
-                  placeholder="e.g. 200 m"
+                  placeholder="e.g. reception, Nov 18"
                 />
               </Field>
               <div className="sm:col-span-2">
@@ -170,7 +171,7 @@ export function Contact() {
                     onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                     rows={5}
                     className="input-base resize-none"
-                    placeholder="Tell us the fabric type, colours, use case, quantity, and timeline."
+                    placeholder="Tell us the line, occasion, silhouettes you like, and your timeline."
                   />
                 </Field>
               </div>

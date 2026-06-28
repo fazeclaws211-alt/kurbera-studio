@@ -4,39 +4,38 @@ import { Reveal } from "./Reveal";
 import type { FabricKey } from "./Collections";
 import { fabricDetails } from "./Collections";
 
-type Mode = "Collection samples" | "Custom print" | "Bulk order";
+type Mode = "Lookbook preview" | "Custom design" | "Studio appointment";
 
 const modeInfo: Record<Mode, { brief: string; checklist: string[] }> = {
-  "Collection samples": {
+  "Lookbook preview": {
     brief:
-      "We'll cut and dispatch a curated swatch pack so your studio can feel the cloth in hand.",
+      "We'll share a closer look at this line — full lookbook, silhouette notes, and styling references.",
     checklist: [
-      "Collection name or season",
-      "Preferred fabric bases",
-      "Target swatch count",
-      "Dispatch city and pincode",
+      "Line you'd like to preview",
+      "Occasion or use case",
+      "Preferred silhouettes",
+      "Where to send the lookbook",
     ],
   },
-  "Custom print": {
+  "Custom design": {
     brief:
-      "Bring your artwork. We'll match palette, scale, and base — and send a strike-off before production.",
+      "Bring a brief. We'll come back with sketches, silhouette options, and a sitting plan before we cut.",
     checklist: [
-      "Artwork (AI / PDF / TIFF)",
-      "Colour palette or Pantone refs",
-      "Quantity and width",
-      "Fabric base preference",
-      "Timeline and dispatch city",
+      "Reference looks or moodboard",
+      "Occasion and date",
+      "Measurements / current size",
+      "Palette preferences",
+      "Timeline and city",
     ],
   },
-  "Bulk order": {
+  "Studio appointment": {
     brief:
-      "Studio-to-production handover. We confirm GSM, width, finish, and a delivery window.",
+      "A private viewing at the studio — try the line on, walk through silhouettes, and book a fitting.",
     checklist: [
-      "Fabric type and code",
-      "Total metres",
-      "Width and GSM",
-      "Finish (washed / starched / raw)",
-      "Deadline and delivery location",
+      "Preferred date and time",
+      "Number of guests",
+      "Lines you want to see",
+      "Notes for our team",
     ],
   },
 };
@@ -45,12 +44,12 @@ const modeInfo: Record<Mode, { brief: string; checklist: string[] }> = {
 const WHATSAPP_NUMBER = "919999999999";
 
 export function SampleDesk({ focus }: { focus: FabricKey }) {
-  const [mode, setMode] = useState<Mode>("Collection samples");
+  const [mode, setMode] = useState<Mode>("Lookbook preview");
 
   const waLink = useMemo(() => {
     const msg = [
       `Hi Kubera Studio — I'd like to start a ${mode.toLowerCase()} enquiry.`,
-      `Fabric focus: ${focus} (${fabricDetails[focus].code}).`,
+      `Line: ${focus} (${fabricDetails[focus].code}).`,
       `I can share: ${modeInfo[mode].checklist.join(", ")}.`,
     ].join("\n\n");
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
@@ -60,15 +59,14 @@ export function SampleDesk({ focus }: { focus: FabricKey }) {
     <section id="sample-desk" className="bg-moss text-cream-warm py-20 md:py-28">
       <div className="mx-auto w-full max-w-7xl px-5 md:px-8">
         <Reveal className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
-          {/* Left intro */}
           <div>
-            <span className="micro-label text-cream-warm/70">03 — Sample Desk</span>
+            <span className="micro-label text-cream-warm/70">03 — Preview Desk</span>
             <h2 className="mt-3 font-display text-4xl font-medium md:text-5xl">
-              The Sample Desk is open.
+              The Preview Desk is open.
             </h2>
             <p className="mt-5 max-w-md text-cream-warm/80 leading-relaxed">
-              Pick the kind of request you're sending. We'll show you exactly what
-              to share so the first sample is the right one.
+              Tell us how you'd like to see the line. We'll send the right
+              preview — a lookbook, a sketch, or an appointment at the studio.
             </p>
 
             <div className="mt-8 rounded-2xl border border-cream-warm/15 bg-moss-deep/50 p-5">
@@ -87,7 +85,6 @@ export function SampleDesk({ focus }: { focus: FabricKey }) {
             </div>
           </div>
 
-          {/* Right panel */}
           <div className="rounded-3xl border border-cream-warm/15 bg-paper text-ink p-6 md:p-8">
             <div className="flex flex-wrap gap-2">
               {(Object.keys(modeInfo) as Mode[]).map((m) => {
