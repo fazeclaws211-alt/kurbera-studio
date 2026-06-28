@@ -114,7 +114,6 @@ export function Contact() {
             <div className="space-y-4 text-sm">
               <Row label="Studio" value="Kubera Studio India LLP" />
               <Row label="Mail" value={STUDIO_EMAIL} />
-              <Row label="WhatsApp" value="+91 98219 99747" />
               <Row label="Hours" value="Mon–Sat · 10:00–18:30 IST" />
             </div>
 
