@@ -132,6 +132,14 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  useEffect(() => {
+    // iOS Safari only triggers :active on elements that receive a touchstart;
+    // this passive listener ensures the custom press feedback works everywhere.
+    const handler = () => {};
+    document.addEventListener("touchstart", handler, { passive: true });
+    return () => document.removeEventListener("touchstart", handler);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />
