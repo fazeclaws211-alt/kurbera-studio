@@ -41,7 +41,7 @@ const modeInfo: Record<Mode, { brief: string; checklist: string[] }> = {
 };
 
 // Replace with the real Kubera WhatsApp number when available.
-const WHATSAPP_NUMBER = "919999999999";
+const WHATSAPP_NUMBER = "919821999747";
 
 export function SampleDesk({ focus }: { focus: FabricKey }) {
   const [mode, setMode] = useState<Mode>("Lookbook preview");
