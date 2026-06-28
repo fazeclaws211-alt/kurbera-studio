@@ -79,23 +79,13 @@ export function Nav() {
             <KuberaWordmark size="nav" />
           </Link>
 
-          <nav className="mx-auto hidden items-center gap-9 md:flex">
+          <nav className="ml-auto hidden items-center gap-9 md:flex">
             {links.map((l) =>
               renderLink(l, "font-display text-[15px] text-ink/85 transition hover:text-kubera-red"),
             )}
           </nav>
 
-          <div className="ml-auto hidden items-center gap-3 md:flex">
-            <div className="flex items-center gap-2 rounded-full bg-moss px-2 py-1.5 pl-4 text-cream-warm">
-              <span className="micro-label text-cream-warm/85">Browse the house</span>
-              <Link
-                to="/catalog"
-                className="btn-feel rounded-full bg-kubera-red px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-cream-warm transition hover:bg-kubera-red-deep"
-              >
-                Open Catalog
-              </Link>
-            </div>
-          </div>
+
 
 
           <button
