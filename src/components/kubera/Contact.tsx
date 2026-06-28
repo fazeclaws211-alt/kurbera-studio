@@ -1,10 +1,9 @@
 import { useMemo, useState } from "react";
-import { Copy, MessageCircle, Send, Check } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { z } from "zod";
 import { Reveal } from "./Reveal";
 
 const WHATSAPP_NUMBER = "919821999747";
-const STUDIO_EMAIL = "studio@kubera.in";
 
 const schema = z.object({
   name: z.string().trim().min(1, "Add your name").max(80),
@@ -34,8 +33,6 @@ export function Contact() {
     message: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [copied, setCopied] = useState(false);
-  const [sent, setSent] = useState(false);
 
   const waMessage = useMemo(() => {
     return [
@@ -68,26 +65,6 @@ export function Contact() {
     return true;
   };
 
-  const onSend = () => {
-    if (!validate()) return;
-    const subject = encodeURIComponent(`Preview enquiry — ${form.name}`);
-    const body = encodeURIComponent(waMessage);
-    window.location.href = `mailto:${STUDIO_EMAIL}?subject=${subject}&body=${body}`;
-    setSent(true);
-    setTimeout(() => setSent(false), 2400);
-  };
-
-  const onCopy = async () => {
-    if (!validate()) return;
-    try {
-      await navigator.clipboard.writeText(waMessage);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1800);
-    } catch {
-      /* noop */
-    }
-  };
-
   const onWa = (e: React.MouseEvent) => {
     if (!validate()) {
       e.preventDefault();
@@ -98,9 +75,9 @@ export function Contact() {
     <section id="contact" className="bg-paper py-20 md:py-28">
       <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
         <Reveal className="mx-auto mb-12 flex max-w-3xl flex-col items-center gap-4 text-center">
-          <span className="micro-label text-moss">05 — Enquire</span>
+          <span className="micro-label text-moss">05 — Contact</span>
           <h2 className="font-display text-4xl font-medium text-ink md:text-5xl">
-            Send a clean preview enquiry.
+            Start a conversation on WhatsApp.
           </h2>
           <p className="max-w-md text-ink/75 leading-relaxed">
             The clearer your brief, the better the first preview. Tell us the
@@ -113,7 +90,6 @@ export function Contact() {
           <div>
             <div className="space-y-4 text-sm">
               <Row label="Studio" value="Kubera Studio India LLP" />
-              <Row label="Mail" value={STUDIO_EMAIL} />
               <Row label="Hours" value="Mon–Sat · 10:00–18:30 IST" />
             </div>
 
@@ -178,14 +154,7 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <button
-                onClick={onSend}
-                className="inline-flex items-center gap-2 rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
-              >
-                {sent ? <Check size={16} /> : <Send size={16} />}
-                {sent ? "Opening mail…" : "Send enquiry"}
-              </button>
+            <div className="mt-6">
               <a
                 href={waLink}
                 onClick={onWa}
@@ -196,13 +165,6 @@ export function Contact() {
                 <MessageCircle size={16} />
                 Request on WhatsApp
               </a>
-              <button
-                onClick={onCopy}
-                className="inline-flex items-center gap-2 rounded-full border border-moss/30 px-5 py-2.5 text-sm font-medium text-moss transition hover:bg-moss hover:text-cream-warm"
-              >
-                {copied ? <Check size={16} /> : <Copy size={16} />}
-                {copied ? "Copied" : "Copy WhatsApp message"}
-              </button>
             </div>
           </div>
         </Reveal>
