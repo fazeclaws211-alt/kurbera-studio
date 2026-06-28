@@ -77,18 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Kubera Studio India LLP — The House of Fashion & Fabric" },
+      { title: "Kubera Studio India LLP — The House of Fashion" },
       {
         name: "description",
         content:
-          "Kubera Studio India LLP — a textile studio for expressive fabrics, custom prints, sample-led discovery and collection-ready fabric stories.",
+          "Kubera Studio India LLP — a boutique fashion house presenting considered garment lines, previewed by lookbook, sketch, or studio appointment.",
       },
       { name: "author", content: "Kubera Studio India LLP" },
-      { property: "og:title", content: "Kubera Studio India LLP — The House of Fashion & Fabric" },
+      { property: "og:title", content: "Kubera Studio India LLP — The House of Fashion" },
       {
         property: "og:description",
         content:
-          "Expressive fabrics, custom prints, and sample-led discovery from a boutique Indian textile studio.",
+          "Considered garment lines from a boutique Indian fashion house — previewed by lookbook, sketch, or studio appointment.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

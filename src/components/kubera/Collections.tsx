@@ -7,62 +7,62 @@ import blends from "@/assets/fabric-blends.jpg";
 import custom from "@/assets/fabric-custom.jpg";
 
 export type FabricKey =
-  | "Cotton"
-  | "Linen"
-  | "Prints"
-  | "Embroidery"
-  | "Blends"
-  | "Custom";
+  | "Dailywear"
+  | "Festive"
+  | "Resort"
+  | "Bridal"
+  | "Occasion"
+  | "Signature";
 
 export const fabricDetails: Record<
   FabricKey,
-  { code: string; gsm: string; descriptor: string; swatches: string[] }
+  { code: string; season: string; descriptor: string; swatches: string[] }
 > = {
-  Cotton: {
-    code: "KB-CT",
-    gsm: "120-180 GSM",
-    descriptor: "Breathable, daily-wear friendly, takes prints cleanly.",
+  Dailywear: {
+    code: "KB-DW",
+    season: "All-season",
+    descriptor: "Easy silhouettes for the everyday — soft tailoring, light layers.",
     swatches: ["var(--cream-warm)", "var(--paper-deep)", "var(--blush)"],
   },
-  Linen: {
-    code: "KB-LN",
-    gsm: "140-220 GSM",
-    descriptor: "Crisp drape with a natural slub. Holds dye softly.",
+  Festive: {
+    code: "KB-FS",
+    season: "Festive '26",
+    descriptor: "Rich tones and considered detail for festival evenings.",
+    swatches: ["var(--kubera-red)", "var(--gold)", "var(--blush)"],
+  },
+  Resort: {
+    code: "KB-RS",
+    season: "Resort '26",
+    descriptor: "Breezy cuts and prints made for warm, slow afternoons.",
     swatches: ["var(--paper-deep)", "var(--olive)", "var(--cream-warm)"],
   },
-  Prints: {
-    code: "KB-PR",
-    gsm: "90-140 GSM",
-    descriptor: "Block, screen, and digital — boutique-scale print runs.",
-    swatches: ["var(--kubera-red)", "var(--blush)", "var(--cream-warm)"],
+  Bridal: {
+    code: "KB-BR",
+    season: "Bridal Atelier",
+    descriptor: "Heirloom-leaning silhouettes — quiet, hand-finished, personal.",
+    swatches: ["var(--moss)", "var(--gold)", "var(--blush)"],
   },
-  Embroidery: {
-    code: "KB-EM",
-    gsm: "Base + thread",
-    descriptor: "Hand and machine work in moss, olive, gold, and pearl.",
-    swatches: ["var(--moss)", "var(--gold)", "var(--olive)"],
-  },
-  Blends: {
-    code: "KB-BL",
-    gsm: "100-200 GSM",
-    descriptor: "Silk-cotton, linen-viscose, and considered modal mixes.",
+  Occasion: {
+    code: "KB-OC",
+    season: "Year-round",
+    descriptor: "Sharply cut pieces for dinners, debuts, and small gatherings.",
     swatches: ["var(--blush)", "var(--olive)", "var(--paper-deep)"],
   },
-  Custom: {
-    code: "KB-CS",
-    gsm: "Spec to brief",
-    descriptor: "Build a fabric from base, weight, finish, and print up.",
+  Signature: {
+    code: "KB-SG",
+    season: "House line",
+    descriptor: "The house silhouettes we return to — refined, unmistakable.",
     swatches: ["var(--kubera-red)", "var(--moss)", "var(--blush)"],
   },
 };
 
 const cards: Array<{ key: FabricKey; image: string }> = [
-  { key: "Cotton", image: cotton },
-  { key: "Linen", image: linen },
-  { key: "Prints", image: prints },
-  { key: "Embroidery", image: embroidery },
-  { key: "Blends", image: blends },
-  { key: "Custom", image: custom },
+  { key: "Dailywear", image: cotton },
+  { key: "Festive", image: prints },
+  { key: "Resort", image: linen },
+  { key: "Bridal", image: embroidery },
+  { key: "Occasion", image: blends },
+  { key: "Signature", image: custom },
 ];
 
 export function Collections({
@@ -77,14 +77,14 @@ export function Collections({
       <div className="mx-auto w-full max-w-7xl px-5 md:px-8">
         <Reveal className="flex flex-col items-start gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <span className="micro-label text-moss">02 — Catalogue</span>
+            <span className="micro-label text-moss">02 — Garment Lines</span>
             <h2 className="mt-3 font-display text-4xl font-medium text-ink md:text-5xl">
-              Pick a fabric direction.
+              Browse a garment line.
             </h2>
           </div>
           <p className="max-w-md text-sm text-ink/70">
-            Tap a card to load it into the Sample Desk. Each direction is a real
-            base we sample, print, and run for collections.
+            Tap a card to load it into the Preview Desk. Each line is a current
+            direction from the house — built as a coordinated set of looks.
           </p>
         </Reveal>
 
@@ -102,7 +102,6 @@ export function Collections({
                       : "border-moss/15"
                   }`}
                 >
-                  {/* corner notch */}
                   <span className="absolute right-4 top-4 z-10 rounded-full bg-paper px-2.5 py-0.5 micro-label text-ink/70 border border-moss/15">
                     {d.code}
                   </span>
@@ -110,7 +109,7 @@ export function Collections({
                   <div className="relative overflow-hidden rounded-2xl">
                     <img
                       src={c.image}
-                      alt={`${c.key} fabric swatch`}
+                      alt={`${c.key} garment line moodboard`}
                       width={1024}
                       height={1024}
                       loading="lazy"
@@ -137,13 +136,13 @@ export function Collections({
                   </div>
 
                   <div className="mt-4 flex items-center justify-between">
-                    <span className="micro-label text-ink/55">{d.gsm}</span>
+                    <span className="micro-label text-ink/55">{d.season}</span>
                     <span
                       className={`micro-label transition ${
                         active ? "text-kubera-red" : "text-moss group-hover:text-kubera-red"
                       }`}
                     >
-                      {active ? "On the desk →" : "Load to desk →"}
+                      {active ? "On the desk →" : "Preview line →"}
                     </span>
                   </div>
                 </button>

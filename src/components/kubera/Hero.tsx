@@ -62,15 +62,13 @@ export function Hero() {
           </svg>
 
           <h2 className="mt-6 font-display text-3xl font-medium leading-tight text-ink sm:text-4xl md:text-5xl">
-            The House of <em className="text-moss not-italic font-display italic">Fashion</em>
-            {" & "}
-            <em className="text-moss not-italic font-display italic">Fabric.</em>
+            The House of <em className="text-moss not-italic font-display italic">Fashion.</em>
           </h2>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/75 sm:text-lg">
-            A textile studio for expressive fabrics, custom prints, sample-led
-            discovery, and collection-ready fabric stories — built for designers,
-            boutiques, and houses that care how cloth behaves in hand.
+            A boutique fashion studio presenting considered garment lines —
+            previewed by lookbook, sketch, or appointment. Built for clients who
+            care how a piece sits, drapes, and finishes.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -78,23 +76,23 @@ export function Hero() {
               onClick={() => scrollTo("#collections")}
               className="group inline-flex items-center gap-2 rounded-full bg-kubera-red px-6 py-3 text-sm font-medium text-cream-warm shadow-[0_8px_22px_-12px_rgba(226,56,45,0.6)] transition hover:bg-kubera-red-deep"
             >
-              Explore Collections
+              View Garment Lines
               <ArrowUpRight size={16} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
             <button
               onClick={() => scrollTo("#sample-desk")}
               className="inline-flex items-center gap-2 rounded-full border border-moss/40 bg-transparent px-6 py-3 text-sm font-medium text-moss transition hover:bg-moss hover:text-cream-warm"
             >
-              Request Samples
+              Request a Preview
             </button>
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-ink/70">
-            <Stat label="Fabric bases" value="42+" />
+            <Stat label="Garment lines" value="6" />
             <span className="hidden h-8 w-px bg-moss/20 sm:block" />
-            <Stat label="In-house prints" value="180+" />
+            <Stat label="Lookbook pieces" value="180+" />
             <span className="hidden h-8 w-px bg-moss/20 sm:block" />
-            <Stat label="Boutique partners" value="60+" />
+            <Stat label="Studio clients" value="60+" />
           </div>
         </div>
 
@@ -110,27 +108,27 @@ export function Hero() {
             <div className="absolute -top-3 right-12 h-6 w-16 rotate-[3deg] bg-olive/40 shadow-sm" />
 
             <div className="flex items-center justify-between">
-              <span className="micro-label text-moss">Featured fabric story</span>
-              <span className="micro-label text-gold">Edition 01</span>
+              <span className="micro-label text-moss">Featured garment preview</span>
+              <span className="micro-label text-gold">Look 01</span>
             </div>
 
             <div className="relative mt-4 overflow-hidden rounded-2xl bg-paper-deep">
               <img
                 src={fabricHero}
-                alt="Blush pink draped fabric with delicate flowers"
+                alt="Blush pink draped garment with delicate floral detail"
                 width={1024}
                 height={1024}
                 className="h-[340px] w-full object-cover"
               />
               <div className="absolute bottom-3 left-3 rounded-full bg-cream-warm/95 px-3 py-1">
-                <span className="micro-label text-ink">Blush · Silk-cotton blend</span>
+                <span className="micro-label text-ink">Festive · Look 04</span>
               </div>
             </div>
 
             <div className="mt-5 flex items-center justify-between">
               <div>
                 <p className="font-display text-xl text-ink">Rosewater 04</p>
-                <p className="text-xs text-ink/60">110 GSM · 58" width · Reactive dyed</p>
+                <p className="text-xs text-ink/60">Festive line · Hand-finished · Studio piece</p>
               </div>
               <div className="flex items-center gap-1.5">
                 {[
@@ -157,7 +155,7 @@ export function Hero() {
                 onClick={() => scrollTo("#sample-desk")}
                 className="inline-flex items-center gap-1.5 text-sm font-medium text-kubera-red hover:text-kubera-red-deep"
               >
-                Request swatch <ArrowUpRight size={14} />
+                Request preview <ArrowUpRight size={14} />
               </button>
             </div>
           </div>

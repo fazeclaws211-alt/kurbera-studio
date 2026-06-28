@@ -12,17 +12,17 @@ import { Footer } from "@/components/kubera/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kubera Studio India LLP — The House of Fashion & Fabric" },
+      { title: "Kubera Studio India LLP — The House of Fashion" },
       {
         name: "description",
         content:
-          "A textile studio for expressive fabrics, custom prints, sample-led discovery, and collection-ready fabric stories.",
+          "A boutique fashion house presenting considered garment lines, previewed by lookbook, sketch, or studio appointment.",
       },
-      { property: "og:title", content: "Kubera Studio India LLP — The House of Fashion & Fabric" },
+      { property: "og:title", content: "Kubera Studio India LLP — The House of Fashion" },
       {
         property: "og:description",
         content:
-          "Expressive fabrics, custom prints, and sample-led discovery from a boutique Indian textile studio.",
+          "Considered garment lines from a boutique Indian fashion house — previewed by lookbook, sketch, or studio appointment.",
       },
     ],
   }),
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
 });
 
 function KuberaHome() {
-  const [focus, setFocus] = useState<FabricKey>("Cotton");
+  const [focus, setFocus] = useState<FabricKey>("Dailywear");
 
   return (
     <div className="min-h-screen bg-paper">

@@ -3,8 +3,8 @@ import { Menu, X } from "lucide-react";
 import { KuberaWordmark } from "./Wordmark";
 
 const links = [
-  { href: "#collections", label: "Collections" },
-  { href: "#sample-desk", label: "Sample Desk" },
+  { href: "#collections", label: "Garment Lines" },
+  { href: "#sample-desk", label: "Preview Desk" },
   { href: "#lookbook", label: "Lookbook" },
   { href: "#contact", label: "Contact" },
 ];
@@ -34,12 +34,10 @@ export function Nav() {
     >
       <div className="border-b border-moss/15">
         <div className="mx-auto flex w-full max-w-7xl items-center gap-6 px-5 py-3 md:px-8 md:py-4">
-          {/* Logo */}
           <a href="#top" onClick={(e) => { e.preventDefault(); scrollTo("#top"); }} className="shrink-0">
             <KuberaWordmark size="nav" />
           </a>
 
-          {/* Center nav */}
           <nav className="mx-auto hidden items-center gap-9 md:flex">
             {links.map((l) => (
               <a
@@ -53,10 +51,9 @@ export function Nav() {
             ))}
           </nav>
 
-          {/* Right capsule */}
           <div className="ml-auto hidden items-center gap-3 md:flex">
             <div className="flex items-center gap-3 rounded-full bg-moss px-4 py-1.5 text-cream-warm">
-              <span className="micro-label text-cream-warm/85">Quick fabric request</span>
+              <span className="micro-label text-cream-warm/85">Request a preview</span>
               <button
                 onClick={() => scrollTo("#sample-desk")}
                 className="rounded-full bg-kubera-red px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-cream-warm transition hover:bg-kubera-red-deep"
@@ -76,7 +73,6 @@ export function Nav() {
         </div>
       </div>
 
-      {/* Mobile sheet */}
       {open && (
         <div className="md:hidden bg-paper border-b border-moss/15 px-5 py-4">
           <nav className="flex flex-col gap-3">
@@ -94,7 +90,7 @@ export function Nav() {
               onClick={() => scrollTo("#sample-desk")}
               className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-moss px-4 py-2 text-cream-warm"
             >
-              <span className="micro-label">Quick fabric request</span>
+              <span className="micro-label">Request a preview</span>
             </button>
           </nav>
         </div>

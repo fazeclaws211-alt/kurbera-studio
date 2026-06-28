@@ -1,8 +1,8 @@
 const words = [
-  "Custom Fabrics",
-  "Prints",
-  "Fashion Textiles",
-  "Studio Sampling",
+  "Garment Previews",
+  "Festive Lines",
+  "Bridal Atelier",
+  "Studio Appointments",
   "Kubera",
 ];
 

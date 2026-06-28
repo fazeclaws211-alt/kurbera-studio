@@ -19,14 +19,14 @@ const items: Array<{
   image: string;
   span: "tall" | "wide" | "regular";
 }> = [
-  { id: "LB/01", cat: "Festive", title: "Vermilion Gold", base: "Silk · Zari", image: f1, span: "tall" },
-  { id: "LB/02", cat: "Dailywear", title: "Cream Field", base: "Cotton · 140 GSM", image: d1, span: "regular" },
-  { id: "LB/03", cat: "Boutique", title: "Stack Six", base: "Linen-Viscose", image: b1, span: "regular" },
-  { id: "LB/04", cat: "Festive", title: "Rose Field", base: "Silk · Reactive", image: f2, span: "wide" },
-  { id: "LB/05", cat: "Dailywear", title: "Moss Glow", base: "Silk-cotton", image: d2, span: "regular" },
-  { id: "LB/06", cat: "Custom", title: "Sample Card 12", base: "Hand-stitched", image: c1, span: "regular" },
-  { id: "LB/07", cat: "Boutique", title: "Paper & Petal", base: "Cotton blend", image: b2, span: "tall" },
-  { id: "LB/08", cat: "Festive", title: "Rosewater Print", base: "Crepe · Reactive", image: p1, span: "regular" },
+  { id: "LB/01", cat: "Festive", title: "Vermilion Gold", base: "Festive · Look 01", image: f1, span: "tall" },
+  { id: "LB/02", cat: "Dailywear", title: "Cream Field", base: "Dailywear · Look 02", image: d1, span: "regular" },
+  { id: "LB/03", cat: "Boutique", title: "Stack Six", base: "Resort · Look 03", image: b1, span: "regular" },
+  { id: "LB/04", cat: "Festive", title: "Rose Field", base: "Festive · Look 04", image: f2, span: "wide" },
+  { id: "LB/05", cat: "Dailywear", title: "Moss Glow", base: "Dailywear · Look 05", image: d2, span: "regular" },
+  { id: "LB/06", cat: "Custom", title: "Atelier 12", base: "Custom · hand-finished", image: c1, span: "regular" },
+  { id: "LB/07", cat: "Boutique", title: "Paper & Petal", base: "Resort · Look 07", image: b2, span: "tall" },
+  { id: "LB/08", cat: "Festive", title: "Rosewater", base: "Festive · Look 08", image: p1, span: "regular" },
 ];
 
 const filters: Cat[] = ["All", "Dailywear", "Festive", "Boutique", "Custom"];
@@ -46,11 +46,11 @@ export function Lookbook() {
           <div>
             <span className="micro-label text-moss">04 — Lookbook Wall</span>
             <h2 className="mt-3 font-display text-4xl font-medium text-ink md:text-5xl">
-              Fabric, in use.
+              Looks, on the floor.
             </h2>
             <p className="mt-3 max-w-md text-sm text-ink/70">
-              Close-ups from the studio floor — bases we run, prints we strike,
-              and small editions we're shipping this season.
+              Pieces from the current lines — close-ups, finishes, and the small
+              editions we're previewing this season.
             </p>
           </div>
 
