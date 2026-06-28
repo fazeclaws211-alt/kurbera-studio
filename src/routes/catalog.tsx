@@ -79,11 +79,12 @@ function CatalogPage() {
   }, [line, q, sort]);
 
   const setLine = (l: string) =>
-    navigate({ search: (prev) => ({ ...prev, line: l }) });
+    navigate({ search: (prev: typeof search) => ({ ...prev, line: l }) });
   const setQ = (val: string) =>
-    navigate({ search: (prev) => ({ ...prev, q: val }), replace: true });
+    navigate({ search: (prev: typeof search) => ({ ...prev, q: val }), replace: true });
   const setSort = (s: "line" | "name") =>
-    navigate({ search: (prev) => ({ ...prev, sort: s }) });
+    navigate({ search: (prev: typeof search) => ({ ...prev, sort: s }) });
+
 
   const grouped = useMemo(() => {
     if (sort === "name" || line !== "All") return null;
