@@ -35,7 +35,7 @@ export function Hero() {
           >
             <path
               className="thread-path"
-              d="M4,34 C70,12 140,46 210,24 C270,6 330,38 372,26"
+              d="M4,34 C70,12 140,46 210,24 C260,8 320,30 376,24"
               stroke="currentColor"
               strokeWidth="1.6"
               strokeLinecap="round"
@@ -48,7 +48,7 @@ export function Hero() {
               opacity="0.85"
             />
             {/* flower at the end of the vine */}
-            <g transform="translate(388 22)">
+            <g transform="translate(380 22)">
               {[0, 72, 144, 216, 288].map((deg) => (
                 <ellipse
                   key={deg}
