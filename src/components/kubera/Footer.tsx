@@ -26,7 +26,6 @@ export function Footer() {
           <ul className="mt-3 space-y-2 text-sm text-cream-warm/85">
             <li>Kubera Studio India LLP</li>
             <li>studio@kubera.in</li>
-            <li>+91 98219 99747</li>
             <li>Instagram · @kubera.studio</li>
           </ul>
         </div>
