@@ -56,13 +56,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
+            className="btn-feel inline-flex items-center justify-center rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-full border border-moss/40 bg-transparent px-5 py-2.5 text-sm font-medium text-moss transition hover:bg-moss hover:text-cream-warm"
+            className="btn-feel inline-flex items-center justify-center rounded-full border border-moss/40 bg-transparent px-5 py-2.5 text-sm font-medium text-moss transition hover:bg-moss hover:text-cream-warm"
           >
             Home
           </a>
