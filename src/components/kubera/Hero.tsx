@@ -1,8 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
-import { Link } from "@tanstack/react-router";
-import { KuberaFlourish } from "./Wordmark";
-
-
 function scrollTo(id: string) {
   document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
 }
@@ -75,14 +70,7 @@ export function Hero() {
           care how a piece sits, drapes, and finishes.
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Link
-            to="/catalog"
-            className="btn-feel group inline-flex items-center gap-2 rounded-full bg-kubera-red px-6 py-3 text-sm font-medium text-cream-warm shadow-[0_8px_22px_-12px_rgba(226,56,45,0.6)] transition hover:bg-kubera-red-deep"
-          >
-            Open Catalog
-            <ArrowUpRight size={16} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </Link>
+        <div className="mt-8 flex items-center justify-center">
           <button
             onClick={() => scrollTo("#sample-desk")}
             className="btn-feel inline-flex items-center gap-2 rounded-full border border-moss/40 bg-transparent px-6 py-3 text-sm font-medium text-moss transition hover:bg-moss hover:text-cream-warm"
