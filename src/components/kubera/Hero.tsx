@@ -17,31 +17,53 @@ export function Hero() {
           <span className="h-px w-14 bg-olive/60" />
         </div>
 
-        <div className="mt-6 inline-flex items-end justify-center overflow-visible">
+        <div className="mt-6 inline-block overflow-visible">
           <h1
             className="font-script text-[5.5rem] leading-[1] text-kubera-red sm:text-[7rem] md:text-[9rem]"
             style={{ transform: "rotate(-2deg)", paddingTop: "0.25em", paddingBottom: "0.15em" }}
           >
             Kubera
           </h1>
-          <KuberaFlourish className="-ml-2 mb-3 h-16 w-24 shrink-0 sm:h-20 sm:w-32 md:h-28 md:w-44" />
+
+          {/* single flourish: animated vine flowing out of the wordmark, blooming into the flower */}
+          <svg
+            viewBox="0 0 420 60"
+            className="-mt-3 ml-auto block h-10 w-full text-olive sm:h-12 md:-mt-4 md:h-16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <path
+              className="thread-path"
+              d="M4,34 C70,12 140,46 210,24 C260,8 320,30 376,24"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              fill="none"
+            />
+            {/* leaf along the vine */}
+            <path
+              d="M150,28 C156,18 168,18 168,26 C164,34 150,36 150,28 Z"
+              fill="var(--moss)"
+              opacity="0.85"
+            />
+            {/* flower at the end of the vine */}
+            <g transform="translate(380 22)">
+              {[0, 72, 144, 216, 288].map((deg) => (
+                <ellipse
+                  key={deg}
+                  cx="0"
+                  cy="-9"
+                  rx="6"
+                  ry="9"
+                  fill="var(--blush)"
+                  transform={`rotate(${deg})`}
+                />
+              ))}
+              <circle r="4.2" fill="var(--gold, #C9A24B)" />
+            </g>
+          </svg>
         </div>
-
-
-        <svg
-          viewBox="0 0 380 40"
-          className="-mt-2 h-8 w-72 text-olive"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.6"
-          strokeLinecap="round"
-        >
-          <path
-            className="thread-path"
-            d="M2,22 C60,2 120,38 180,18 C240,2 300,32 378,14"
-          />
-          <circle cx="378" cy="14" r="3" fill="currentColor" opacity="0.7" />
-        </svg>
 
         <h2 className="mt-6 font-display text-3xl font-medium leading-tight text-ink sm:text-4xl md:text-5xl">
           The House of <em className="text-moss not-italic font-display italic">Fashion.</em>
