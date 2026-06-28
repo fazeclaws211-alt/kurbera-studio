@@ -1,10 +1,10 @@
 type Size = "nav" | "hero" | "footer" | "card";
 
 const sizes: Record<Size, { script: string; sub: string; gap: string }> = {
-  nav: { script: "text-4xl leading-none", sub: "text-[9px]", gap: "-mt-0.5" },
-  hero: { script: "text-[8rem] md:text-[12rem] leading-[0.85]", sub: "text-sm", gap: "mt-4" },
-  footer: { script: "text-5xl leading-none", sub: "text-[10px]", gap: "mt-1" },
-  card: { script: "text-6xl leading-none", sub: "text-[10px]", gap: "mt-1" },
+  nav: { script: "text-4xl leading-[1.15] pt-1 pb-0.5", sub: "text-[9px]", gap: "mt-0" },
+  hero: { script: "text-[8rem] md:text-[12rem] leading-[1] pt-3 pb-2", sub: "text-sm", gap: "mt-4" },
+  footer: { script: "text-5xl leading-[1.15] pt-1 pb-1", sub: "text-[10px]", gap: "mt-1" },
+  card: { script: "text-6xl leading-[1.15] pt-1 pb-1", sub: "text-[10px]", gap: "mt-1" },
 };
 
 export function KuberaWordmark({
@@ -18,10 +18,10 @@ export function KuberaWordmark({
 }) {
   const s = sizes[size];
   return (
-    <div className={`inline-flex flex-col ${className}`}>
+    <div className={`inline-flex flex-col overflow-visible ${className}`}>
       <span
-        className={`font-script text-kubera-red ${s.script}`}
-        style={{ transform: "rotate(-1.5deg)", display: "inline-block" }}
+        className={`font-script text-kubera-red overflow-visible ${s.script}`}
+        style={{ transform: "rotate(-1.5deg)", display: "inline-block", transformOrigin: "left center" }}
       >
         Kubera
       </span>
@@ -30,7 +30,7 @@ export function KuberaWordmark({
       </span>
       {tagline && (
         <span className="mt-2 font-display italic text-olive text-sm">
-          The House of Fashion &amp; Fabric
+          The House of Fashion
         </span>
       )}
     </div>
