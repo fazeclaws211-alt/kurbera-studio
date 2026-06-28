@@ -6,8 +6,9 @@ export { fabricDetails };
 export type { FabricKey };
 
 const cards: Array<{ key: FabricKey; image: string }> = (
-  ["Dailywear", "Festive", "Resort", "Bridal", "Occasion", "Signature"] as FabricKey[]
+  ["Dailywear", "Festive", "Bridal"] as FabricKey[]
 ).map((k) => ({ key: k, image: fabricDetails[k].cover }));
+
 
 
 export function Collections() {
@@ -31,7 +32,7 @@ export function Collections() {
           </Link>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
           {cards.map((c, i) => {
             const d = fabricDetails[c.key];
             return (

@@ -86,16 +86,17 @@ export function Nav() {
           </nav>
 
           <div className="ml-auto hidden items-center gap-3 md:flex">
-            <div className="flex items-center gap-3 rounded-full bg-moss px-4 py-1.5 text-cream-warm">
-              <span className="micro-label text-cream-warm/85">Request a preview</span>
-              <button
-                onClick={() => handleHash("sample-desk")}
+            <div className="flex items-center gap-2 rounded-full bg-moss px-2 py-1.5 pl-4 text-cream-warm">
+              <span className="micro-label text-cream-warm/85">Browse the house</span>
+              <Link
+                to="/catalog"
                 className="rounded-full bg-kubera-red px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-cream-warm transition hover:bg-kubera-red-deep"
               >
-                Open
-              </button>
+                Open Catalog
+              </Link>
             </div>
           </div>
+
 
           <button
             className="ml-auto md:hidden rounded-full border border-moss/30 p-2 text-moss"
@@ -113,12 +114,14 @@ export function Nav() {
             {links.map((l) =>
               renderLink(l, "font-display text-lg text-ink hover:text-kubera-red"),
             )}
-            <button
-              onClick={() => handleHash("sample-desk")}
-              className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-moss px-4 py-2 text-cream-warm"
+            <Link
+              to="/catalog"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex w-fit items-center gap-2 rounded-full bg-kubera-red px-4 py-2 text-cream-warm"
             >
-              <span className="micro-label">Request a preview</span>
-            </button>
+              <span className="micro-label">Open Catalog</span>
+            </Link>
+
           </nav>
         </div>
       )}
