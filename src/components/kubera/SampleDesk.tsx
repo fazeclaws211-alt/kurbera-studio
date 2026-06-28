@@ -122,7 +122,7 @@ export function SampleDesk({ focus }: { focus: FabricKey }) {
               </ul>
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center gap-3">
+            <div className="mt-6">
               <a
                 href={waLink}
                 target="_blank"
@@ -131,12 +131,6 @@ export function SampleDesk({ focus }: { focus: FabricKey }) {
               >
                 <MessageCircle size={16} />
                 Request on WhatsApp
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 rounded-full border border-moss/30 px-5 py-2.5 text-sm font-medium text-moss transition hover:bg-moss hover:text-cream-warm"
-              >
-                Send a written enquiry
               </a>
             </div>
           </div>
