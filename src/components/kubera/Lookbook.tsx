@@ -73,15 +73,15 @@ export function Lookbook() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 grid-rows-3 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((it, i) => (
-            <Reveal key={it.id} delay={i * 50}>
+            <Reveal key={it.id} delay={i * 50} className="h-full">
               <Link
                 to="/catalog"
                 search={{ line: it.cat === "Boutique" ? "Resort" : it.cat === "Custom" ? "Signature" : it.cat }}
-                className="group block h-full overflow-hidden rounded-[22px] border border-moss/15 bg-cream-warm"
+                className="group flex h-full flex-col overflow-hidden rounded-[22px] border border-moss/15 bg-cream-warm"
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
                   <img
                     src={it.image}
                     alt={`${it.title} — ${it.base}`}
@@ -90,14 +90,14 @@ export function Lookbook() {
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
-                  <span className="absolute left-3 top-3 rounded-full bg-cream-warm/95 px-3 py-1 micro-label text-ink">
+                  <span className="absolute left-3 top-3 rounded-full border border-moss/15 bg-cream-warm/95 px-3 py-1 micro-label text-ink">
                     {it.id} — {it.cat}
                   </span>
                 </div>
-                <div className="flex items-center justify-between p-4">
-                  <div>
-                    <p className="font-display text-lg text-ink">{it.title}</p>
-                    <p className="text-xs text-ink/60">{it.base}</p>
+                <div className="flex h-[88px] flex-col justify-center gap-1 p-4">
+                  <div className="min-w-0">
+                    <p className="truncate font-display text-lg leading-tight text-ink">{it.title}</p>
+                    <p className="truncate text-xs leading-tight text-ink/60">{it.base}</p>
                   </div>
                   <span className="micro-label text-moss opacity-0 transition group-hover:opacity-100">
                     View →
