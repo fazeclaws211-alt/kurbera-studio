@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
 import { Nav } from "@/components/kubera/Nav";
 import { Hero } from "@/components/kubera/Hero";
 import { Marquee } from "@/components/kubera/Marquee";
-import { Collections, type FabricKey } from "@/components/kubera/Collections";
+import { Collections } from "@/components/kubera/Collections";
 import { SampleDesk } from "@/components/kubera/SampleDesk";
 import { Lookbook } from "@/components/kubera/Lookbook";
 import { Contact } from "@/components/kubera/Contact";
@@ -30,16 +29,14 @@ export const Route = createFileRoute("/")({
 });
 
 function KuberaHome() {
-  const [focus, setFocus] = useState<FabricKey>("Dailywear");
-
   return (
     <div className="min-h-screen bg-paper">
       <Nav />
       <main>
         <Hero />
         <Marquee />
-        <Collections selected={focus} onSelect={setFocus} />
-        <SampleDesk focus={focus} />
+        <Collections />
+        <SampleDesk />
         <Lookbook />
         <Contact />
       </main>
