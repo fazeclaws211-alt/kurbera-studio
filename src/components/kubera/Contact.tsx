@@ -3,7 +3,7 @@ import { Copy, MessageCircle, Send, Check } from "lucide-react";
 import { z } from "zod";
 import { Reveal } from "./Reveal";
 
-const WHATSAPP_NUMBER = "919999999999";
+const WHATSAPP_NUMBER = "919821999747";
 const STUDIO_EMAIL = "studio@kubera.in";
 
 const schema = z.object({
@@ -114,7 +114,7 @@ export function Contact() {
             <div className="space-y-4 text-sm">
               <Row label="Studio" value="Kubera Studio India LLP" />
               <Row label="Mail" value={STUDIO_EMAIL} />
-              <Row label="WhatsApp" value="+91 99999 99999" />
+              <Row label="WhatsApp" value="+91 98219 99747" />
               <Row label="Hours" value="Mon–Sat · 10:00–18:30 IST" />
             </div>
 
