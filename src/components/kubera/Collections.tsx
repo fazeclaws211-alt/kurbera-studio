@@ -1,69 +1,14 @@
+import { Link } from "@tanstack/react-router";
 import { Reveal } from "./Reveal";
-import cotton from "@/assets/fabric-cotton.jpg";
-import linen from "@/assets/fabric-linen.jpg";
-import prints from "@/assets/fabric-prints.jpg";
-import embroidery from "@/assets/fabric-embroidery.jpg";
-import blends from "@/assets/fabric-blends.jpg";
-import custom from "@/assets/fabric-custom.jpg";
+import { fabricDetails, type FabricKey } from "@/data/catalog";
 
-export type FabricKey =
-  | "Dailywear"
-  | "Festive"
-  | "Resort"
-  | "Bridal"
-  | "Occasion"
-  | "Signature";
+export { fabricDetails };
+export type { FabricKey };
 
-export const fabricDetails: Record<
-  FabricKey,
-  { code: string; season: string; descriptor: string; swatches: string[] }
-> = {
-  Dailywear: {
-    code: "KB-DW",
-    season: "All-season",
-    descriptor: "Easy silhouettes for the everyday — soft tailoring, light layers.",
-    swatches: ["var(--cream-warm)", "var(--paper-deep)", "var(--blush)"],
-  },
-  Festive: {
-    code: "KB-FS",
-    season: "Festive '26",
-    descriptor: "Rich tones and considered detail for festival evenings.",
-    swatches: ["var(--kubera-red)", "var(--gold)", "var(--blush)"],
-  },
-  Resort: {
-    code: "KB-RS",
-    season: "Resort '26",
-    descriptor: "Breezy cuts and prints made for warm, slow afternoons.",
-    swatches: ["var(--paper-deep)", "var(--olive)", "var(--cream-warm)"],
-  },
-  Bridal: {
-    code: "KB-BR",
-    season: "Bridal Atelier",
-    descriptor: "Heirloom-leaning silhouettes — quiet, hand-finished, personal.",
-    swatches: ["var(--moss)", "var(--gold)", "var(--blush)"],
-  },
-  Occasion: {
-    code: "KB-OC",
-    season: "Year-round",
-    descriptor: "Sharply cut pieces for dinners, debuts, and small gatherings.",
-    swatches: ["var(--blush)", "var(--olive)", "var(--paper-deep)"],
-  },
-  Signature: {
-    code: "KB-SG",
-    season: "House line",
-    descriptor: "The house silhouettes we return to — refined, unmistakable.",
-    swatches: ["var(--kubera-red)", "var(--moss)", "var(--blush)"],
-  },
-};
+const cards: Array<{ key: FabricKey; image: string }> = (
+  ["Dailywear", "Festive", "Resort", "Bridal", "Occasion", "Signature"] as FabricKey[]
+).map((k) => ({ key: k, image: fabricDetails[k].cover }));
 
-const cards: Array<{ key: FabricKey; image: string }> = [
-  { key: "Dailywear", image: cotton },
-  { key: "Festive", image: prints },
-  { key: "Resort", image: linen },
-  { key: "Bridal", image: embroidery },
-  { key: "Occasion", image: blends },
-  { key: "Signature", image: custom },
-];
 
 export function Collections({
   selected,
