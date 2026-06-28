@@ -32,23 +32,23 @@ export function Hero() {
 
   return (
     <section id="top" className="relative overflow-hidden bg-paper paper-grain">
-      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-5 pt-10 pb-20 md:px-8 md:pt-16 md:pb-28 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+      <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-5 pt-10 pb-20 md:px-8 md:pt-16 md:pb-28 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:items-center">
         {/* LEFT */}
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
           <div className="flex items-center gap-3">
+            <span className="h-px w-14 bg-olive/60 lg:hidden" />
             <span className="micro-label text-moss">Est. Studio · India</span>
             <span className="h-px w-14 bg-olive/60" />
           </div>
 
           <h1 className="mt-6 font-script text-[5.5rem] leading-[0.9] text-kubera-red sm:text-[7rem] md:text-[9rem]"
-              style={{ transform: "rotate(-2deg)", transformOrigin: "left" }}>
+              style={{ transform: "rotate(-2deg)" }}>
             Kubera
           </h1>
 
-          {/* thread vine */}
           <svg
             viewBox="0 0 380 40"
-            className="-mt-2 ml-2 h-8 w-72 text-olive"
+            className="-mt-2 h-8 w-72 text-olive"
             fill="none"
             stroke="currentColor"
             strokeWidth="1.6"
@@ -71,7 +71,7 @@ export function Hero() {
             care how a piece sits, drapes, and finishes.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
             <button
               onClick={() => scrollTo("#collections")}
               className="group inline-flex items-center gap-2 rounded-full bg-kubera-red px-6 py-3 text-sm font-medium text-cream-warm shadow-[0_8px_22px_-12px_rgba(226,56,45,0.6)] transition hover:bg-kubera-red-deep"
@@ -87,7 +87,7 @@ export function Hero() {
             </button>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-ink/70">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-ink/70 lg:justify-start">
             <Stat label="Garment lines" value="6" />
             <span className="hidden h-8 w-px bg-moss/20 sm:block" />
             <Stat label="Lookbook pieces" value="180+" />

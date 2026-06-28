@@ -42,19 +42,16 @@ export function Lookbook() {
   return (
     <section id="lookbook" className="bg-paper-deep py-20 md:py-28">
       <div className="mx-auto w-full max-w-7xl px-5 md:px-8">
-        <Reveal className="flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <span className="micro-label text-moss">04 — Lookbook Wall</span>
-            <h2 className="mt-3 font-display text-4xl font-medium text-ink md:text-5xl">
-              Looks, on the floor.
-            </h2>
-            <p className="mt-3 max-w-md text-sm text-ink/70">
-              Pieces from the current lines — close-ups, finishes, and the small
-              editions we're previewing this season.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
+        <Reveal className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
+          <span className="micro-label text-moss">04 — Lookbook Wall</span>
+          <h2 className="font-display text-4xl font-medium text-ink md:text-5xl">
+            Looks, on the floor.
+          </h2>
+          <p className="max-w-md text-sm text-ink/70">
+            Pieces from the current lines — close-ups, finishes, and the small
+            editions we're previewing this season.
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
             {filters.map((f) => {
               const active = f === cat;
               return (

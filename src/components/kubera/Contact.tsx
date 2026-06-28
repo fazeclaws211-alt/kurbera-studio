@@ -97,19 +97,21 @@ export function Contact() {
   return (
     <section id="contact" className="bg-paper py-20 md:py-28">
       <div className="mx-auto w-full max-w-6xl px-5 md:px-8">
-        <Reveal className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <div>
-            <span className="micro-label text-moss">05 — Enquire</span>
-            <h2 className="mt-3 font-display text-4xl font-medium text-ink md:text-5xl">
-              Send a clean preview enquiry.
-            </h2>
-            <p className="mt-5 max-w-md text-ink/75 leading-relaxed">
-              The clearer your brief, the better the first preview. Tell us the
-              line, the occasion, and the timeline — we'll come back with the
-              right lookbook or appointment.
-            </p>
+        <Reveal className="mx-auto mb-12 flex max-w-3xl flex-col items-center gap-4 text-center">
+          <span className="micro-label text-moss">05 — Enquire</span>
+          <h2 className="font-display text-4xl font-medium text-ink md:text-5xl">
+            Send a clean preview enquiry.
+          </h2>
+          <p className="max-w-md text-ink/75 leading-relaxed">
+            The clearer your brief, the better the first preview. Tell us the
+            line, the occasion, and the timeline — we'll come back with the
+            right lookbook or appointment.
+          </p>
+        </Reveal>
 
-            <div className="mt-8 space-y-4 text-sm">
+        <Reveal className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:items-start">
+          <div>
+            <div className="space-y-4 text-sm">
               <Row label="Studio" value="Kubera Studio India LLP" />
               <Row label="Mail" value={STUDIO_EMAIL} />
               <Row label="WhatsApp" value="+91 99999 99999" />
