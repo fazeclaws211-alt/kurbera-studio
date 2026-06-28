@@ -1,10 +1,10 @@
 type Size = "nav" | "hero" | "footer" | "card";
 
 const sizes: Record<Size, { script: string; sub: string; gap: string }> = {
-  nav: { script: "text-4xl leading-none", sub: "text-[9px]", gap: "-mt-0.5" },
-  hero: { script: "text-[8rem] md:text-[12rem] leading-[0.85]", sub: "text-sm", gap: "mt-4" },
-  footer: { script: "text-5xl leading-none", sub: "text-[10px]", gap: "mt-1" },
-  card: { script: "text-6xl leading-none", sub: "text-[10px]", gap: "mt-1" },
+  nav: { script: "text-4xl leading-[1.15] pt-1 pb-0.5", sub: "text-[9px]", gap: "mt-0" },
+  hero: { script: "text-[8rem] md:text-[12rem] leading-[1] pt-3 pb-2", sub: "text-sm", gap: "mt-4" },
+  footer: { script: "text-5xl leading-[1.15] pt-1 pb-1", sub: "text-[10px]", gap: "mt-1" },
+  card: { script: "text-6xl leading-[1.15] pt-1 pb-1", sub: "text-[10px]", gap: "mt-1" },
 };
 
 export function KuberaWordmark({
