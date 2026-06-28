@@ -60,7 +60,7 @@ export function Lookbook() {
                 <button
                   key={f}
                   onClick={() => setCat(f)}
-                  className={`rounded-full px-4 py-1.5 text-sm font-medium transition ${
+                  className={`btn-feel rounded-full px-4 py-1.5 text-sm font-medium transition ${
                     active
                       ? "bg-kubera-red text-cream-warm"
                       : "bg-cream-warm text-ink/70 hover:text-kubera-red border border-moss/15"
@@ -79,7 +79,7 @@ export function Lookbook() {
               <Link
                 to="/catalog"
                 search={{ line: it.cat === "Boutique" ? "Resort" : it.cat === "Custom" ? "Signature" : it.cat }}
-                className="group flex h-full flex-col overflow-hidden rounded-[22px] border border-moss/15 bg-cream-warm"
+                className="btn-feel group flex h-full flex-col overflow-hidden rounded-[22px] border border-moss/15 bg-cream-warm"
               >
                 <div className="relative aspect-[4/5] w-full overflow-hidden">
                   <img
@@ -111,7 +111,7 @@ export function Lookbook() {
         <div className="mt-10 text-center">
           <Link
             to="/catalog"
-            className="inline-flex items-center gap-2 rounded-full bg-moss px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-moss-deep"
+            className="btn-feel inline-flex items-center gap-2 rounded-full bg-moss px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-moss-deep"
           >
             Browse all looks →
           </Link>
