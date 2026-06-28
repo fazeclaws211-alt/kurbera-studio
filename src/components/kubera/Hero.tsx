@@ -1,4 +1,4 @@
-import { KuberaFlourish } from "./Wordmark";
+
 
 
 function scrollTo(id: string) {
