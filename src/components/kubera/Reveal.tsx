@@ -31,6 +31,5 @@ export function Reveal({
     return () => io.disconnect();
   }, [delay]);
 
-  // @ts-expect-error polymorphic
-  return <Tag ref={ref} className={`reveal ${className}`}>{children}</Tag>;
+  return <Tag ref={ref as never} className={`reveal ${className}`}>{children}</Tag>;
 }
