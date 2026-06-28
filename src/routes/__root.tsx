@@ -24,7 +24,7 @@ function NotFoundComponent() {
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
+            className="btn-feel inline-flex items-center justify-center rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
           >
             Back to the studio
           </Link>
@@ -56,13 +56,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
+            className="btn-feel inline-flex items-center justify-center rounded-full bg-kubera-red px-5 py-2.5 text-sm font-medium text-cream-warm transition hover:bg-kubera-red-deep"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-full border border-moss/40 bg-transparent px-5 py-2.5 text-sm font-medium text-moss transition hover:bg-moss hover:text-cream-warm"
+            className="btn-feel inline-flex items-center justify-center rounded-full border border-moss/40 bg-transparent px-5 py-2.5 text-sm font-medium text-moss transition hover:bg-moss hover:text-cream-warm"
           >
             Home
           </a>
@@ -131,6 +131,14 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    // iOS Safari only triggers :active on elements that receive a touchstart;
+    // this passive listener ensures the custom press feedback works everywhere.
+    const handler = () => {};
+    document.addEventListener("touchstart", handler, { passive: true });
+    return () => document.removeEventListener("touchstart", handler);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

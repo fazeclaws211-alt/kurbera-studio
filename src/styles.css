@@ -94,6 +94,7 @@
 
   html {
     scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
@@ -102,6 +103,14 @@
     font-family: var(--font-body);
     font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  a,
+  [role="button"] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
   }
 
   ::selection {
@@ -143,14 +152,26 @@
     height: 1px;
   }
   .btn-feel {
-    transition: transform 120ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 120ms ease;
+    transition: transform 120ms cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 120ms ease, filter 120ms ease;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
   }
   .btn-feel:active {
-    transform: scale(0.97) translateY(1px);
+    transform: scale(0.96) translateY(1px);
     box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.12);
+    filter: brightness(0.95);
+  }
+  .btn-feel-flat {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    user-select: none;
   }
   .btn-feel-flat:active {
-    transform: scale(0.97) translateY(1px);
+    transform: scale(0.96) translateY(1px);
+    filter: brightness(0.95);
   }
 }
 
