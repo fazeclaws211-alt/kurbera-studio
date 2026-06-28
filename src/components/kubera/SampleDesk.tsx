@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
 import { MessageCircle } from "lucide-react";
 import { Reveal } from "./Reveal";
-import type { FabricKey } from "./Collections";
-import { fabricDetails } from "./Collections";
+import { fabricDetails, type FabricKey } from "@/data/catalog";
+
 
 type Mode = "Lookbook preview" | "Custom design" | "Studio appointment";
 
@@ -43,8 +43,9 @@ const modeInfo: Record<Mode, { brief: string; checklist: string[] }> = {
 // Replace with the real Kubera WhatsApp number when available.
 const WHATSAPP_NUMBER = "919821999747";
 
-export function SampleDesk({ focus }: { focus: FabricKey }) {
+export function SampleDesk() {
   const [mode, setMode] = useState<Mode>("Lookbook preview");
+  const [focus, setFocus] = useState<FabricKey>("Dailywear");
 
   const waLink = useMemo(() => {
     const msg = [
@@ -54,6 +55,8 @@ export function SampleDesk({ focus }: { focus: FabricKey }) {
     ].join("\n\n");
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
   }, [mode, focus]);
+
+  const lines = Object.keys(fabricDetails) as FabricKey[];
 
   return (
     <section id="sample-desk" className="bg-moss text-cream-warm py-20 md:py-28">
@@ -71,19 +74,36 @@ export function SampleDesk({ focus }: { focus: FabricKey }) {
 
         <Reveal className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-16 lg:items-start">
           <div className="rounded-2xl border border-cream-warm/15 bg-moss-deep/50 p-5">
-            <p className="micro-label text-cream-warm/60">Currently focused on</p>
-            <div className="mt-2 flex items-center justify-between gap-4">
-              <div>
-                <p className="font-display text-3xl">{focus}</p>
-                <p className="text-sm text-cream-warm/75">
-                  {fabricDetails[focus].descriptor}
-                </p>
-              </div>
-              <span className="micro-label rounded-full border border-cream-warm/25 px-3 py-1">
+            <p className="micro-label text-cream-warm/60">Choose a line</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {lines.map((l) => {
+                const active = l === focus;
+                return (
+                  <button
+                    key={l}
+                    onClick={() => setFocus(l)}
+                    className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
+                      active
+                        ? "bg-kubera-red text-cream-warm"
+                        : "bg-cream-warm/10 text-cream-warm/80 hover:bg-cream-warm/20"
+                    }`}
+                  >
+                    {l}
+                  </button>
+                );
+              })}
+            </div>
+            <div className="mt-5 border-t border-cream-warm/15 pt-4">
+              <p className="font-display text-3xl">{focus}</p>
+              <p className="mt-1 text-sm text-cream-warm/75">
+                {fabricDetails[focus].descriptor}
+              </p>
+              <span className="mt-3 inline-block micro-label rounded-full border border-cream-warm/25 px-3 py-1">
                 {fabricDetails[focus].code}
               </span>
             </div>
           </div>
+
 
           <div className="rounded-3xl border border-cream-warm/15 bg-paper text-ink p-6 md:p-8">
             <div className="flex flex-wrap gap-2">
